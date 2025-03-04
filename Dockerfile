@@ -1,11 +1,14 @@
-# Use an official Node.js image based on Debian (buster)
-FROM node:16-buster
+# Use an official Node.js image based on Debian Bullseye (has newer Python)
+FROM node:18-bullseye
 
 # Update apt-get and install FFmpeg, Python3 and pip
 RUN apt-get update && apt-get install -y ffmpeg python3 python3-pip
 
+# Upgrade pip to ensure we get the latest wheels
+RUN pip3 install --upgrade pip
+
 # Install Python dependencies: OpenAI Whisper and yt-dlp
-# Whisper will handle transcription and yt-dlp is used to download YouTube videos.
+# (With a newer Python version, Triton should install correctly.)
 RUN pip3 install --no-cache-dir openai-whisper yt-dlp
 
 # Set the working directory in the container
