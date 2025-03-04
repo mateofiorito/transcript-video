@@ -1,0 +1,16 @@
+{
+  "name": "video-caption-api",
+  "version": "1.0.0",
+  "description": "An API to download, transcribe, style, and burn captions into YouTube videos.",
+  "main": "server-segment-two.js",
+  "scripts": {
+    "start": "node server-segment-two.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}
